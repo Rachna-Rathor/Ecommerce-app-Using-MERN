@@ -22,6 +22,15 @@ function NavBar() {
   // }, [theme]);
   //  console.log(theme)
 
+  // search function
+  const [search, setSearch] = useState("");
+   
+  const handleSearchChange = (event) => {
+    setSearch(event.target.value);
+  };
+   
+
+
   const [sticky, setstickey] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -113,6 +122,7 @@ function NavBar() {
                   type="text"
                   className="grow outline-none"
                   placeholder="Search"
+                  onChange={handleSearchChange}
                 />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

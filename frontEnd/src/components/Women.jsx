@@ -12,7 +12,7 @@ function Women() {
     const getShop=async()=>{
       try {
         const res=await axios.get("http://localhost:3000/item/v1/getItem")
-        console.log(res.data)
+        // console.log(res.data)
         const filteredData = res.data.filter(item => item.gender === 'women');
 
         setshop(filteredData)

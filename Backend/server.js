@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 const cors =require('cors')
 
 app.use(cors());
-
+// middle wares
+app.use(bodyParser.json());
 app.use(express.json())
 const port = 3000;
 app.listen(port, () => {
@@ -21,3 +23,7 @@ app.use("/item/v1",router)
 
 const userrouter=require("./routes/user.routes")
 app.use("/user/v2",userrouter)
+
+const searchapi=require("./routes/search.routes")
+app.use("/api/v3",searchapi)
+
